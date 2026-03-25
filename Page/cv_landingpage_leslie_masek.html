@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leslie Masek | Projektleiterin Tech Transformation</title>
+  <meta name="description" content="CV-Landingpage von Leslie Masek – Projektleiterin mit Fokus auf digitale Transformation, strategische Initiativen und Stakeholdermanagement an der Schnittstelle von Business und IT." />
+  <style>
+    :root {
+      --bg: #f6f4f1;
+      --surface: #ffffff;
+      --surface-soft: #f1ede7;
+      --text: #1f1f1b;
+      --muted: #666259;
+      --border: #ddd6cc;
+      --primary: #ff5a1f;
+      --primary-dark: #d94812;
+      --accent: #2c2a26;
+      --shadow: 0 16px 40px rgba(31, 31, 27, 0.08);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #f6f4f1 0%, #f9f7f4 100%);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--container));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(246, 244, 241, 0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(221, 214, 204, 0.7);
+    }
+
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 76px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.1rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .detail-value a {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .detail-value a:hover {
+        text-decoration: underline;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.15rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn--primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn--primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn--secondary:hover {
+      background: var(--surface);
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .hero__main {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero__main::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255, 90, 31, 0.14) 0%, rgba(255, 90, 31, 0) 72%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .chips {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .chip {
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 5.25rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 8ch;
+    }
+
+    .hero__subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      margin: 1rem 0 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      max-width: 42rem;
+    }
+
+    .hero__lead {
+      margin: 0;
+      max-width: 46rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .hero__highlight {
+      margin-top: 2.2rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .hero__metric {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: #faf7f2;
+      border: 1px solid var(--border);
+    }
+
+    .hero__metric strong {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero__metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero__side {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 1.25rem;
+    }
+
+    .profile-card {
+      padding: 1.2rem;
+    }
+
+    .profile-image {
+        aspect-ratio: 4 / 4.7;
+        border-radius: 18px;
+        background: linear-gradient(180deg, #efeae3 0%, #e5ddd2 100%);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .profile-name {
+      margin: 0 0 0.25rem;
+      font-size: 1.2rem;
+    }
+
+    .profile-role {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .detail-card {
+      padding: 1.3rem;
+    }
+
+    .detail-card h3,
+    .section-title,
+    .timeline__role,
+    .sidebar-card h3 {
+      letter-spacing: -0.03em;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 0.95rem;
+      margin-top: 0.9rem;
+    }
+
+    .detail-item {
+      padding-bottom: 0.95rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-item:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .detail-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.22rem;
+      font-weight: 700;
+    }
+
+    .detail-value {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .section {
+      padding: 1.5rem 0 4rem;
+    }
+
+    .section__header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+    #erfahrung .section__header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.02;
+    }
+
+    .section-intro {
+      max-width: 52rem;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.25rem;
+    }
+
+    .stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .content-card {
+      padding: 1.4rem;
+    }
+
+    .content-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.08rem;
+    }
+
+    .content-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .content-card ul {
+      margin: 0.85rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .content-card li + li {
+      margin-top: 0.4rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline__item {
+      padding: 1.4rem;
+      position: relative;
+    }
+
+    .timeline__top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .timeline__role {
+      margin: 0;
+      font-size: 1.18rem;
+    }
+
+    .timeline__company {
+      margin: 0.2rem 0 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .timeline__date {
+      white-space: nowrap;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+    }
+
+    .timeline__bullets {
+      margin: 0.9rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .timeline__bullets li + li {
+      margin-top: 0.48rem;
+    }
+
+    .sidebar-card {
+      padding: 1.35rem;
+    }
+
+    .sidebar-card h3 {
+      margin: 0 0 0.95rem;
+      font-size: 1.1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .skill-tag {
+      display: inline-flex;
+      padding: 0.6rem 0.8rem;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .list-clean {
+      margin: 0;
+      padding-left: 1rem;
+      color: var(--muted);
+    }
+
+    .list-clean li + li {
+      margin-top: 0.5rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-tile {
+      padding: 1.25rem;
+    }
+
+    .contact-tile__label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-tile__value {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1080px) {
+      .hero__grid,
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .hero__main,
+      .content-card,
+      .timeline__item,
+      .sidebar-card,
+      .detail-card,
+      .profile-card,
+      .contact-tile {
+        padding: 1.15rem;
+      }
+
+      .hero__highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .section__header {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="brand">Leslie Masek</div>
+      <nav class="nav">
+        <a href="#profil">Profil</a>
+        <a href="#erfahrung">Erfahrung</a>
+        <a href="#ausbildung">Ausbildung</a>
+        <a href="#skills">Skills</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="profil">
+      <div class="container hero__grid">
+        <article class="card hero__main">
+          <div>
+            <div class="eyebrow">CV · Projektleitung · Tech Transformation</div>
+            <div class="chips">
+              <span class="chip">Digitale Transformation</span>
+              <span class="chip">Stakeholdermanagement</span>
+              <span class="chip">Business & IT</span>
+            </div>
+            <p class="hero__lead">Hallo, ich bin </p>
+            <h1>Leslie Masek</h1>
+            <p class="hero__subtitle">Projektleiterin mit Fokus auf strategische Initiativen, digitale Transformation und nachhaltige Umsetzung an der Schnittstelle von Business und IT.</p>
+            <p class="hero__lead">Mehrjährige Erfahrung in der Steuerung komplexer Projekte in interdisziplinären Umfeldern sowie in der Zusammenarbeit mit IT, Fachbereichen und externen Partnern. Hohe Technologieaffinität, sicher im Einsatz klassischer und agiler Arbeitsweisen und erfahren in strategischen Initiativen zur Prozessoptimierung, Management-Reporting und datenbasierter Entscheidungsunterstützung.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#kontakt">Kontakt</a>
+              <a class="btn btn--secondary" href="#erfahrung">Berufserfahrung ansehen</a>
+            </div>
+          </div>
+
+          <div class="hero__highlight">
+            <div class="hero__metric">
+              <strong>FHNW MSc</strong>
+              <span>Berufsbegleitender Master in Human-Centered Digital Innovation</span>
+            </div>
+            <div class="hero__metric">
+              <strong>5+ Jahre</strong>
+              <span>Projektleitung im internationalen Umfeld</span>
+            </div>
+            <div class="hero__metric">
+              <strong>30 %</strong>
+              <span>Kostenreduktion durch gezielte Prozessoptimierung</span>
+            </div>
+
+          </div>
+        </article>
+
+        <aside class="hero__side">
+          <section class="card profile-card">
+            <div class="profile-image">
+              <img src="Profile%20Picture%2024.jpg" alt="Portrait von Leslie Masek" />
+            </div>
+            <h2 class="profile-name">Projektleiterin Social Media Marketing &amp Community Management</h2>
+            <p class="profile-role">Zürich, Schweiz</p>
+          </section>
+
+          <section class="card detail-card">
+            <h3>Profil auf einen Blick</h3>
+            <div class="detail-list">
+              <div class="detail-item">
+                <span class="detail-label">Nationalität</span>
+                <span class="detail-value">Schweiz</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Telefon</span>
+                <span class="detail-value">078 921 42 80</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">E-Mail</span>
+                <span class="detail-value">leslie.masek@gmail.com</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Sprachen</span>
+                <span class="detail-value">Deutsch, Englisch, Französisch</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">LinkedIn</span>
+                <span class="detail-value">
+  <a href="https://www.linkedin.com/in/leslie-masek/" target="_blank">
+  Leslie Masek
+</a>
+</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="erfahrung">
+      <div class="container">
+        <div class="section__header">
+          <div class="eyebrow">Berufserfahrung</div>
+          <h2 class="section-title">Strategische Projektarbeit mit Fokus auf Wirkung</h2>
+          <p class="section-intro">
+            Schwerpunkte liegen in der Steuerung digitaler Initiativen,
+            Management-Reporting, Stakeholdermanagement sowie in der Entwicklung
+            tragfähiger Lösungsansätze für komplexe Herausforderungen.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="timeline">
+            <article class="card timeline__item">
+              <div class="timeline__top">
+                <div>
+                  <h3 class="timeline__role">Projektleitung Social Media Marketing & Community Management</h3>
+                  <p class="timeline__company">Swiss International Air Lines Ltd. · Zürich</p>
+                </div>
+                <div class="timeline__date">Feb 2021 – Heute</div>
+              </div>
+              <ul class="timeline__bullets">
+                <li>Crossfunktionales Projektmanagement mit Schwerpunkt auf Stakeholdermanagement und strategischer Kommunikation zwischen IT, Fachbereichen und externen Partnern.</li>
+                <li>Strategische Planung, Umsetzung und Analyse digitaler Initiativen sowie Koordination internationaler Projekte.</li>
+                <li>Konzeption und Einführung neuer Chat-Services zur Optimierung der Servicequalität.</li>
+                <li>Erstellung strategischer Reports zur Unterstützung datenbasierter Entscheidungen für das Management.</li>
+                <li>Einführung digitaler Tools und Restrukturierung der Serviceprozesse mit 30 % Kostenreduktion.</li>
+                <li>Durchführung von Workshops zur Befähigung von Teams in der digitalen Weiterentwicklung.</li>
+                <li>Fachliche Leitung interner Teams und externer Partner mit Fokus auf Qualitätssicherung und Zielerreichung.</li>
+              </ul>
+            </article>
+
+            <article class="card timeline__item">
+              <div class="timeline__top">
+                <div>
+                  <h3 class="timeline__role">Marketing Intelligence & Performance Marketing</h3>
+                  <p class="timeline__company">Lufthansa Group · Zürich</p>
+                </div>
+              </div>
+              <ul class="timeline__bullets">
+                <li>Durchführung von Kosten- und Performance-Analysen zur Bewertung und Steigerung der Budgeteffizienz von Kampagnen.</li>
+                <li>Aufbereitung von Analyseergebnissen und Entscheidungsgrundlagen für Stakeholder.</li>
+                <li>Aufbau und Weiterentwicklung von Reporting-Strukturen zur transparenten Erfolgsmessung.</li>
+                <li>Entwicklung von Kennzahlen und Reporting-Logiken zur Vergleichbarkeit von Massnahmen.</li>
+                <li>Durchführung und Koordination von RfP-Prozessen für Tools und externe Provider.</li>
+              </ul>
+            </article>
+
+            <article class="card timeline__item">
+              <div class="timeline__top">
+                <div>
+                  <h3 class="timeline__role">Expert Premium Feedback Services</h3>
+                  <p class="timeline__company">Swiss International Air Lines Ltd. · Basel</p>
+                </div>
+                <div class="timeline__date">Apr 2017 – Jan 2021</div>
+              </div>
+              <ul class="timeline__bullets">
+                <li>Monitoring von Service-KPIs sowie Erstellung regelmässiger Qualitäts- und Performance-Reports.</li>
+                <li>Koordination interner Stakeholder und Sicherstellung einheitlicher Prozesse und Standards.</li>
+                <li>Mitwirkung an kontinuierlichen Verbesserungsinitiativen zur Steigerung von Servicequalität und Effizienz.</li>
+                <li>Schulung und Onboarding neuer Mitarbeitender inklusive Wissensdokumentation.</li>
+              </ul>
+            </article>
+
+            <article class="card timeline__item">
+              <div class="timeline__top">
+                <div>
+                  <h3 class="timeline__role">Consultant Premium Travel Services</h3>
+                  <p class="timeline__company">Swiss International Air Lines Ltd. · Basel</p>
+                </div>
+                <div class="timeline__date">Aug 2015 – Mar 2017</div>
+              </div>
+              <ul class="timeline__bullets">
+                <li>Bearbeitung von Flugbuchungen und Tarifberechnungen nach IATA-Standards.</li>
+                <li>Betreuung von Kundenanfragen per Telefon und E-Mail sowie individuelle Beratung von Vielflieger-Kunden.</li>
+                <li>Sicherstellung korrekter Dokumentation und Zusammenarbeit mit internen Teams.</li>
+              </ul>
+            </article>
+
+            <article class="card timeline__item">
+              <div class="timeline__top">
+                <div>
+                  <h3 class="timeline__role">Lernende Kauffrau EFZ</h3>
+                  <p class="timeline__company">Baloise Group · Basel</p>
+                </div>
+                <div class="timeline__date">Aug 2012 – Jul 2015</div>
+              </div>
+              <ul class="timeline__bullets">
+                <li>Einsätze in Einkauf, Marketing, Immobilien, Buchhaltung, HR und Ausbildungszentrum.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="stack">
+            <section class="card sidebar-card">
+              <h3>Relevanz für Tech-Transformation</h3>
+              <ul class="list-clean">
+                <li>Steuerung digitaler Initiativen in interdisziplinären Umfeldern</li>
+                <li>Erstellung von Entscheidungsgrundlagen und Management-Reports</li>
+                <li>Stakeholdermanagement zwischen Business, IT und externen Partnern</li>
+                <li>Prozessoptimierung mit messbarem Business Impact</li>
+                <li>Erfahrung in agilen und klassischen Arbeitsweisen</li>
+              </ul>
+            </section>
+
+            <section class="card sidebar-card">
+              <h3>Ausgewählte Stärken</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Strategische Initiativen</span>
+                <span class="skill-tag">Projektsteuerung</span>
+                <span class="skill-tag">Management-Reporting</span>
+                <span class="skill-tag">Risiko-Analyse</span>
+                <span class="skill-tag">KPI-Analyse</span>
+                <span class="skill-tag">Stakeholdermanagement</span>
+                <span class="skill-tag">Change Management</span>
+                <span class="skill-tag">Business-IT-Schnittstelle</span>
+                <span class="skill-tag">Fachliche Führung von internen und externen Teams</span>
+                <span class="skill-tag">Workshops & Enablement</span>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ausbildung">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <div class="eyebrow">Ausbildung & Zusatz</div>
+            <h2 class="section-title">Fundiertes Profil aus Business, Technologie und Praxis</h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="stack">
+            <article class="card content-card">
+              <h3>Master of Science in Human-Centered Digital Innovation</h3>
+              <p>Fachhochschule Nordwestschweiz FHNW · Olten</p>
+              <p>Seit Sep 2025 · berufsbegleitend</p>
+            </article>
+
+            <article class="card content-card">
+              <h3>Bachelor of Science in Wirtschaftsingenieurwesen</h3>
+              <p>Fachhochschule Nordwestschweiz FHNW · Brugg-Windisch</p>
+              <p>Sep 2020 – Aug 2024 · berufsbegleitend</p>
+              <ul>
+                <li>Vertiefung in Digital Engineering</li>
+              </ul>
+            </article>
+
+            <article class="card content-card">
+              <h3>Berufsmaturität in Technik, Architektur, Life Sciences</h3>
+              <p>Allgemeine Gewerbeschule Basel</p>
+              <p>Aug 2016 – Jul 2018 · berufsbegleitend</p>
+            </article>
+
+            <article class="card content-card">
+              <h3>Kauffrau EFZ – Dienstleistung & Administration</h3>
+              <p>KV Basel · Aug 2012 – Jul 2015</p>
+            </article>
+
+            <article class="card content-card">
+              <h3>Austausch im Ausland</h3>
+              <p>Chaparral High School · California, USA · Aug 2011 – Jul 2012</p>
+            </article>
+          </div>
+
+          <div class="stack">
+            <section class="card sidebar-card">
+              <h3>Zusätzliche Erfahrungen</h3>
+              <ul class="list-clean">
+                <li>Leitung mehrerer praxisnaher Business-Projekte an der FHNW in Zusammenarbeit mit externen Unternehmen.</li>
+                <li>Zwei Projekte wurden gemeinsam mit SWISS und in enger Zusammenarbeit mit SWISS IT umgesetzt.</li>
+                <li>Präsentation der Ergebnisse an Executive Workshops und Bootcamps des Instituts für Business Engineering.</li>
+                <li>Vorstandsmitglied beim Erasmus Student Network FHNW mit Verantwortung für Organisation und Community.</li>
+                <li>Studienreise nach Südostasien mit Fokus auf Innovation und globales Business.</li>
+                <li>Frühe Führungserfahrung als Gruppenleiterin einer Jugendgruppe.</li>
+              </ul>
+            </section>
+
+            <section class="card sidebar-card" id="skills">
+              <h3>Skills</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Change Management</span>
+                <span class="skill-tag">Transformationsprozesse mit IT</span>
+                <span class="skill-tag">Senior Stakeholder Management</span>
+                <span class="skill-tag">Digitale Initiativen</span>
+                <span class="skill-tag">Management-Reporting</span>
+                <span class="skill-tag">KPI-Definition</span>
+                <span class="skill-tag">Projektmanagement agil & klassisch</span>
+                <span class="skill-tag">Risikoanalysen</span>
+                <span class="skill-tag">Budget-Controlling</span>
+                <span class="skill-tag">Business-IT-Schnittstellen</span>
+                <span class="skill-tag">Strukturierte Arbeitsweise</span>
+              </div>
+            </section>
+
+            <section class="card sidebar-card">
+              <h3>Sprachen & Interessen</h3>
+              <ul class="list-clean">
+                <li>Deutsch: Muttersprache</li>
+                <li>Englisch: Muttersprache</li>
+                <li>Französisch: fortgeschritten</li>
+                <li>Interessen: kulturell orientierte Reisen, technologische Trends, Outdoor- und Wassersport, Kochen</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <div class="eyebrow">Kontakt</div>
+            <h2 class="section-title">Bereit für den nächsten Schritt</h2>
+          </div>
+          <p class="section-intro">Ich freue mich über eine Kontaktaufnahme.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="card contact-tile">
+            <span class="contact-tile__label">Telefon</span>
+            <div class="contact-tile__value">078 921 42 80</div>
+          </article>
+          <article class="card contact-tile">
+            <span class="contact-tile__label">E-Mail</span>
+            <div class="contact-tile__value">leslie.masek@gmail.com</div>
+          </article>
+          <article class="card contact-tile">
+            <span class="detail-label">LinkedIn</span>
+            <span class="detail-value">
+  <a href="https://www.linkedin.com/in/leslie-masek/" target="_blank">
+  Leslie Masek
+</a>
+</span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Leslie Masek · CV Landingpage</div>
+  </footer>
+</body>
+</html>
